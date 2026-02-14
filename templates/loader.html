@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading - SoundWave</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/loader.css') }}">
+</head>
+<body>
+  <div class="bg-circle bg-circle-1"></div>
+  <div class="bg-circle bg-circle-2"></div>
+  <div class="bg-circle bg-circle-3"></div>
+
+  <div class="loading-container">
+    <div class="logo-container">
+      <svg width="60" height="60" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="38" stroke="url(#gradient)" stroke-width="4"/>
+        <circle cx="40" cy="40" r="28" fill="url(#gradient)" opacity="0.2"/>
+        <path d="M35 28V52L53 40L35 28Z" fill="url(#gradient)"/>
+        <defs>
+          <linearGradient id="gradient" x1="0" y1="0" x2="80" y2="80">
+            <stop offset="0%" stop-color="#8B5CF6"/>
+            <stop offset="100%" stop-color="#EC4899"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>SoundWave</h1>
+    <div class="sound-wave">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="circular-loader">
+      <div class="spinner-ring spinner-ring-1"></div>
+      <div class="spinner-ring spinner-ring-2"></div>
+      <div class="spinner-ring spinner-ring-3"></div>
+      <div class="spinner-center">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 15H40M20 25H40M20 35H35" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="45" cy="45" r="10" fill="#EC4899"/>
+          <path d="M42 45L48 41V49L42 45Z" fill="white"/>
+        </svg>
+      </div>
+    </div>
+    <p class="loading-text">Extracting local music stored<span class="dots"></span></p>
+    <p class="sub-text">Will be ready in a moment</p>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='scripts/loader.js') }}"></script>
+</body>
+</html>

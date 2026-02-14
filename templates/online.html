@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoundWave - Online Songs</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/online.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+        <h1>Online Songs</h1>
+        <p class="subtitle">Search and stream your favorite music</p>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="song-search" placeholder="Search by title or artist...">
+    </div>
+
+    <div class="songs-list" id="songs-list">
+        <!-- Song cards will be dynamically inserted here -->
+    </div>
+  </div>
+
+  <!-- NOW PLAYING SECTION (FULL WIDTH) -->
+  <div id="now-playing">
+    <div class="custom-audio-player" id="custom-player">
+      <div class="song-info">
+        <span id="playing-title">No song playing</span>
+      </div>
+      <audio id="audio" src="" preload="metadata"></audio>
+      <div class="controls">
+        <button id="play-pause">▶️</button>
+        <input type="range" id="progress" min="0" max="100" value="0">
+        <div class="volume-container">
+          <span class="speaker-icon">🔊</span>
+          <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='scripts/online.js') }}"></script>
+</body>
+</html>

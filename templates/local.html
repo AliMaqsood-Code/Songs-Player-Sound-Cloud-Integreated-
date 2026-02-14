@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SoundWave — Local</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles/local.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amplitudejs@5.1.0/dist/amplitude.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/amplitudejs@5.1.0/dist/amplitude.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <h1 class="brand-title">SoundWave</h1>
+        <p class="brand-sub">Discover your perfect rhythm</p>
+      </div>
+    </header>
+
+    <!-- Now Playing (Top Player) -->
+    <div id="top-player" class="top-player hidden">
+      <span id="now-playing-title" data-amplitude-song-info="name"></span> — 
+      <span id="now-playing-artist" data-amplitude-song-info="artist"></span>
+      <div class="player-controls">
+        <button class="amplitude-prev">&#9664;</button>
+        <button class="amplitude-play-pause">&#9654;/||</button>
+        <button class="amplitude-next">&#9654;&#9654;</button>
+      </div>
+    </div>
+
+    <main class="main">
+      <section id="player" class="amplitude-player">
+        <div class="card">
+          <div class="card-head">
+            <h2>All Tracks</h2>
+            <p class="muted" id="totalSongsText">0 songs available</p>
+            <button id="playlist-button" class="btn">Playlist</button>
+          </div>
+
+          <div class="card-body" id="songsContainer">
+            <!-- Songs injected by JS -->
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Playlist Modal -->
+  <div id="playlist-modal" class="modal hidden">
+    <div class="backdrop"></div>
+    <div class="modal-panel">
+      <div class="modal-head">
+        <h3>Playlist</h3>
+        <button id="close-playlist" class="btn close-btn">✖</button>
+      </div>
+      <div class="modal-body" id="playlist-container">
+        <!-- Playlist songs will appear here -->
+      </div>
+      <div class="modal-foot">
+        <button id="play-all" class="btn">Play All</button>
+        <button id="shuffle" class="btn">Shuffle</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/scripts/local.js"></script>
+</body>
+</html>

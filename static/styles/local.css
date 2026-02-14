@@ -1,0 +1,346 @@
+/* ---------- Reset & Base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0f0f1b;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ---------- Header ---------- */
+.header {
+  padding: 20px 30px;
+  background: #1a1a2e;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid #222;
+}
+
+.brand-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #8B5CF6;
+  text-shadow: 0 0 6px #8B5CF6, 0 0 12px #8B5CF6;
+}
+
+.brand-sub {
+  font-size: 0.9rem;
+  color: #9aa0a6;
+  margin-left: 10px;
+}
+
+/* ---------- Top Player ---------- */
+#top-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(18, 15, 28, 0.95);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #333;
+  z-index: 1000;
+  border-radius: 12px 12px 0 0;
+  backdrop-filter: blur(10px);
+}
+
+#top-player span {
+  font-size: 1rem;
+  font-weight: 500;
+  text-shadow: 0 0 4px #8B5CF6;
+}
+
+.player-controls button {
+  background: #8B5CF6;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 8px 14px;
+  margin-left: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-shadow: 0 0 3px #fff;
+  box-shadow: 0 0 8px #8B5CF6, 0 0 15px #8B5CF6;
+}
+
+.player-controls button:hover {
+  background: #6d3fbf;
+  box-shadow: 0 0 12px #8B5CF6, 0 0 20px #EC4899;
+}
+
+/* ---------- Main Section ---------- */
+.main {
+  padding: 20px 30px;
+}
+
+.card {
+  background: rgba(18, 15, 28, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7), 0 0 15px #8B5CF6;
+  overflow: hidden;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+  border-bottom: 1px solid #333;
+}
+
+.card-head h2 {
+  font-size: 1.4rem;
+  color: #8B5CF6;
+  text-shadow: 0 0 6px #8B5CF6;
+}
+
+.card-head .muted {
+  font-size: 0.85rem;
+  color: #9aa0a6;
+}
+
+.btn {
+  background: #EC4899;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  text-shadow: 0 0 2px #fff;
+  box-shadow: 0 0 6px #EC4899, 0 0 12px #8B5CF6;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: #ff70b2;
+  box-shadow: 0 0 12px #EC4899, 0 0 20px #8B5CF6;
+}
+
+/* ---------- Song Cards ---------- */
+.card-body {
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.song-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(30, 25, 45, 0.9);
+  padding: 14px 16px;
+  border-radius: 14px;
+  transition: 0.3s;
+  box-shadow: 0 0 8px #8B5CF6 inset;
+}
+
+.song-card:hover {
+  background: rgba(40, 35, 60, 0.95);
+  box-shadow: 0 0 15px #EC4899 inset, 0 0 10px #8B5CF6;
+}
+
+.song-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.song-title {
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 4px #EC4899;
+}
+
+.song-artist {
+  font-size: 0.85rem;
+  color: #9aa0a6;
+}
+
+.song-controls button {
+  background: #8B5CF6;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  margin-left: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #8B5CF6;
+  transition: all 0.3s;
+}
+
+.song-controls button:hover {
+  background: #EC4899;
+  box-shadow: 0 0 12px #EC4899, 0 0 15px #8B5CF6;
+}
+
+/* ---------- Playlist Modal ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.modal-panel {
+  position: relative;
+  background: #1a1a2e;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 15px #8B5CF6, 0 0 20px #EC4899;
+}
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  border-bottom: 1px solid #333;
+  text-shadow: 0 0 6px #8B5CF6;
+}
+
+.modal-body {
+  padding: 15px 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-foot {
+  padding: 15px 22px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid #333;
+}
+
+.playlist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(30, 25, 45, 0.9);
+  padding: 12px 14px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px #8B5CF6 inset;
+}
+
+.remove-btn {
+  background: #EC4899;
+  border: none;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 8px #EC4899;
+}
+
+.remove-btn:hover {
+  background: #ff70b2;
+  box-shadow: 0 0 12px #EC4899, 0 0 15px #8B5CF6;
+}
+
+/* ---------- Utilities ---------- */
+.hidden { display: none; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .card-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  #top-player {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .song-controls button,
+  .btn,
+  .remove-btn {
+    padding: 4px 8px;
+    font-size: 0.9rem;
+  }
+}
+
+.song-controls {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.song-controls button {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #8B5CF6;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: 0.25s;
+  box-shadow: 0 0 8px #8B5CF6;
+}
+
+.song-controls button:hover {
+  background: #EC4899;
+  transform: scale(1.1);
+}
+
+
+.playlist-item .remove-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #EC4899;
+  border-radius: 50%;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.playlist-item .remove-btn:hover {
+  background: #ff70b2;
+  transform: scale(1.12);
+}

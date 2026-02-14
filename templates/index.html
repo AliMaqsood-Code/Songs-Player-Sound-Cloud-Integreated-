@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoundWave - Music Player</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo-container">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="38" stroke="url(#gradient)" stroke-width="4"/>
+          <circle cx="40" cy="40" r="28" fill="url(#gradient)" opacity="0.2"/>
+          <path d="M35 28V52L53 40L35 28Z" fill="url(#gradient)"/>
+          <defs>
+            <linearGradient id="gradient" x1="0" y1="0" x2="80" y2="80">
+              <stop offset="0%" stop-color="#8B5CF6"/>
+              <stop offset="100%" stop-color="#EC4899"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h1>SoundWave</h1>
+      <p class="subtitle">Choose your music source</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card-container">
+        <div class="card-content">
+          <div class="icon-container">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="15" width="60" height="70" rx="4" stroke="#8B5CF6" stroke-width="3" fill="rgba(139, 92, 246, 0.1)"/>
+              <path d="M35 35H65M35 45H65M35 55H55" stroke="#A78BFA" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="70" cy="70" r="15" fill="#8B5CF6"/>
+              <path d="M65 70L75 64V76L65 70Z" fill="white"/>
+            </svg>
+          </div>
+          <h2>Local Songs</h2>
+          <p class="description">
+            Play music stored on your device. Access your personal collection anytime, offline and fast.
+          </p>
+          <button class="cta-button cta-button-purple" id="local-btn">
+            <span>Browse Local</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="card-content">
+          <div class="icon-container">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" stroke="#EC4899" stroke-width="3" fill="rgba(236, 72, 153, 0.1)"/>
+              <circle cx="50" cy="50" r="25" stroke="#F9A8D4" stroke-width="2" stroke-dasharray="4 4"/>
+              <circle cx="50" cy="50" r="15" stroke="#F9A8D4" stroke-width="2" stroke-dasharray="4 4"/>
+              <circle cx="50" cy="50" r="8" fill="#EC4899"/>
+              <path d="M50 20V30M50 70V80M20 50H30M70 50H80" stroke="#F9A8D4" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2>Online Songs</h2>
+          <p class="description">
+            Stream unlimited music from the cloud. Discover new artists and curated playlists worldwide.
+          </p>
+          <button class="cta-button cta-button-pink" id="online-btn">
+            <span>Explore Online</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='scripts/index.js') }}"></script>
+</body>
+</html>
