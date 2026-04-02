@@ -88,7 +88,7 @@ A modern web-based music player application that lets you play music from both l
 
 1. **Clone or download the project**
    ```bash
-   cd "github.com/PythonMindset/Songs-Player-Sound-Cloud-Integreated-"
+   cd "github.com/AliMaqsood-Code/Songs-Player-Sound-Cloud-Integreated-"
    ```
 
 2. **Create a virtual environment** (optional but recommended)
